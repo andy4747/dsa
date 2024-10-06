@@ -116,3 +116,18 @@ class ArrayWarmup:
             temp[n-k+i]=nums[i]
         for i in range(n):
             nums[i] = temp[i]
+
+    def reverse_inplace(self, nums: list[int]) -> None:
+        """
+        Reverse the array in place.
+
+        Args:
+            nums: The array to reverse
+        """
+        n=len(nums)
+        left=0
+        right=n-1
+        while left<right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left+=1
+            right-=1
