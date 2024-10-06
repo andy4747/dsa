@@ -7,13 +7,6 @@ class Solution:
             nums: A list of integers to be rotated.
             k: The number of steps to rotate the array.
         
-        Example:
-            >>> nums = [1, 2, 3, 4, 5, 6, 7]
-            >>> k = 3
-            >>> Solution().rotate(nums, k)
-            >>> nums
-            [5, 6, 7, 1, 2, 3, 4]
-        
         Time Complexity:
             O(n) where n is the length of nums
         

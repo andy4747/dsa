@@ -7,9 +7,11 @@ class Solution:
         Check if the array contains any duplicates.
 
         Args:
-        nums (List[int]): The array to check for duplicates.
-
-        Returns:
-        bool: True if the array contains duplicates, False otherwise.
+            nums: The array to check for duplicates.
         """
-        return len(nums) != len(set(nums))
+        result: dict[int, bool] = {}
+        for v in nums:
+            if v in result:
+                return True
+            result[v]=True
+        return False

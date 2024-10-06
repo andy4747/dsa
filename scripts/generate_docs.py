@@ -6,7 +6,7 @@ def generate_docs():
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
     # Generate RST files
-    subprocess.run(['python', 'scripts/generate_rst_files.py'])
+    #subprocess.run(['python', 'scripts/generate_rst_files.py'])
 
     # Build the documentation
     subprocess.run(['sphinx-build', '-b', 'html', 'docs', 'docs/_build'])
