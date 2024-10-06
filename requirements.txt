@@ -1,0 +1,12 @@
+pytest
+sphinx
+jupyter
+hatchling
+flake8
+mypy
+black
+isort
+sphinx-autodoc-typehints
+sphinx-book-theme 
+myst-parser 
+sphinx-copybutton
