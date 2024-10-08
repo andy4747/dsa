@@ -1,1 +1,1 @@
-from .rotate_array import Solution as RotateArray
+from .array_warmup import ArrayWarmup

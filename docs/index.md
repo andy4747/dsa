@@ -15,7 +15,7 @@ neetcode
 ## Project Structure
 
 ```
-dsa_project/
+/
 │
 ├── src/
 │   ├── algorithms/

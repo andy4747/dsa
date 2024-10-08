@@ -11,3 +11,8 @@ ValidAnagram
 .. automodule:: src.neetcode.arrays_and_hashing.valid_anagram
    :members:
 
+Two Sums
+--------
+.. automodule:: src.neetcode.arrays_and_hashing.two_sum
+   :members:
+
