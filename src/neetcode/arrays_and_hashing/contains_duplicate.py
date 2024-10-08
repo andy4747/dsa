@@ -9,9 +9,9 @@ class Solution:
         Args:
             nums: The array to check for duplicates.
         """
-        result: dict[int, bool] = {}
-        for v in nums:
-            if v in result:
+        numsDict: dict[int, bool] = {}
+        for i, v in enumerate(nums):
+            if v in numsDict:
                 return True
-            result[v]=True
+            numsDict[v] = True
         return False

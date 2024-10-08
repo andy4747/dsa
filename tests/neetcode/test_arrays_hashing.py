@@ -1,9 +1,9 @@
-from src.neetcode.arrays_and_hashing.contains_duplicate import Solution as ContainsDuplicateSolution
-from src.neetcode.arrays_and_hashing.valid_anagram import Solution as ValidAnagram
-from src.neetcode.arrays_and_hashing.two_sums import Solution as TwoSums
+from src.neetcode.arrays_and_hashing import ContainsDuplicate
+from src.neetcode.arrays_and_hashing import ValidAnagram
+from src.neetcode.arrays_and_hashing import TwoSum
 
 def test_contains_duplicate():
-    solution = ContainsDuplicateSolution()
+    solution = ContainsDuplicate()
     
     assert solution.containsDuplicate([1, 2, 3, 1]) == True
     assert solution.containsDuplicate([1, 2, 3, 4]) == False
@@ -38,7 +38,7 @@ def test_valid_anagram():
 
 
 def test_twoSum():
-    solution = TwoSums()  # Assuming the twoSum function is in a class named Solution
+    solution = TwoSum()  # Assuming the twoSum function is in a class named Solution
     
     # Test case 1: Normal list with a valid pair
     nums1 = [2, 7, 11, 15]

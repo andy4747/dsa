@@ -14,7 +14,37 @@ class Solution:
 
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         """
+        Approach: Hashmap
+
         Finds two indices in `nums` such that the numbers at those indices add up to `target`.
+        
+        Args:
+            nums (List[int]): A list of integers.
+            target (int): The target sum for which two numbers are to be found.
+
+        Returns:
+            List[int]: A list of two indices whose values add up to the target.
+
+        Example:
+            >>> solution = Solution()
+            >>> solution.twoSum([2, 7, 11, 15], 9)
+            [0, 1]
+        
+        In this example, nums[0] + nums[1] = 2 + 7 = 9, which is equal to the target.
+        """
+        numsDict: dict[int, int] = {}
+        for i, v in enumerate(nums):
+            more = target - v
+            if more in numsDict:
+                return [numsDict[more], i]
+            numsDict[v] = i
+        return []
+
+    def twoSumBF(self, nums: list[int], target: int) -> list[int]:
+        """
+        Finds two indices in `nums` such that the numbers at those indices add up to `target`.
+
+        Approach: Bruteforce
         
         Args:
             nums (List[int]): A list of integers.
