@@ -117,17 +117,29 @@ class ArrayWarmup:
         for i in range(n):
             nums[i] = temp[i]
 
-    def reverse_inplace(self, nums: list[int]) -> None:
+    def rotate3(self, nums: list[int], k: int) -> None:
         """
-        Reverse the array in place.
+        Rotates the array by k positions to the left and returns nothing.
+
+        Approach: By using reversal approach, which is reversing the arrya 3 times, first the entire array, then the last n-k elements and at last first k elements.
 
         Args:
-            nums: The array to reverse
+            nums: The array to rotate.
+            k:  The number of elements to shift.
         """
+        def reverse(start:int, end:int) -> None:
+            while start<end:
+                nums[start], nums[end] = nums[end], nums[start]
+                start+=1
+                end-=1
         n=len(nums)
-        left=0
-        right=n-1
-        while left<right:
-            nums[left], nums[right] = nums[right], nums[left]
-            left+=1
-            right-=1
+        k = k % n
+        
+        # reverse the entire array
+        reverse(0, n-1)
+
+        # reverse the first k elements
+        reverse(0, k-1)
+
+        # reverse the remaining n-k elements
+        reverse(k, n-1)
