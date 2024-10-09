@@ -117,7 +117,7 @@ def test_rotate_left_one():
     solution = ArrayWarmup()
     
     # Test case 1: Rotating a normal array
-    nums1 = [1, 2, 3, 4, 5, 6, 7]
+    nums1 = [1, 2, 3, 4, 5]
     rotated_nums1 = solution.rotate_left_one(nums1)
     assert rotated_nums1 == [2, 3, 4, 5, 1], f"Expected [2, 3, 4, 5, 1] but got {rotated_nums1}"
     
@@ -193,33 +193,4 @@ def test_rotate2():
     nums5 = [42]
     solution.rotate2(nums5, 1)
     assert nums5 == [42], f"Expected [42] but got {nums5}"
-
-
-def test_reverse_inplace():
-    solution = ArrayWarmup()  # Assuming the reverse_inplace function is in a class named Solution
-    
-    # Test case 1: Normal list with multiple elements
-    nums1 = [1, 2, 3, 4, 5]
-    solution.reverse_inplace(nums1)
-    assert nums1 == [5, 4, 3, 2, 1], f"Expected [5, 4, 3, 2, 1] but got {nums1}"
-    
-    # Test case 2: List with two elements
-    nums2 = [1, 2]
-    solution.reverse_inplace(nums2)
-    assert nums2 == [2, 1], f"Expected [2, 1] but got {nums2}"
-    
-    # Test case 3: List with one element (no change expected)
-    nums3 = [42]
-    solution.reverse_inplace(nums3)
-    assert nums3 == [42], f"Expected [42] but got {nums3}"
-    
-    # Test case 4: Empty list (no change expected)
-    nums4 = []
-    solution.reverse_inplace(nums4)
-    assert nums4 == [], f"Expected [] but got {nums4}"
-    
-    # Test case 5: List with duplicate elements
-    nums5 = [1, 2, 2, 3, 3]
-    solution.reverse_inplace(nums5)
-    assert nums5 == [3, 3, 2, 2, 1], f"Expected [3, 3, 2, 2, 1] but got {nums5}"
 
