@@ -16,3 +16,8 @@ Majority Element
 .. automodule:: src.leetcode.easy.majority_element
    :members:
 
+Remove Element
+--------------
+.. automodule:: src.leetcode.easy.remove_element
+   :members:
+
