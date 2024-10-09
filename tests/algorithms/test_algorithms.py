@@ -1,3 +1,4 @@
+import pytest
 from src.algorithms import bubble_sort
 from src.algorithms import linear_search
 from src.algorithms import MTBArray
@@ -81,4 +82,38 @@ def test_insert_at_first():
     nums = [10, 20, 30]
     mtb_array.insert_at_first(nums, 0)
     assert nums == [0, 10, 20, 30], "The list should contain zero at the beginning."
+
+def test_insert_at():
+    """Test various scenarios for inserting a value at a specified index in a list."""
+    mtb_array = MTBArray()
+
+    # Test 1: Inserting at the beginning of the list
+    nums = [2, 3, 4]
+    mtb_array.insert_at(nums, 0, 1)
+    assert nums == [1, 2, 3, 4], "The list should be [1, 2, 3, 4] after insertion at the beginning."
+
+    # Test 2: Inserting at the end of the list
+    nums = [1, 2, 3]
+    mtb_array.insert_at(nums, 3, 4)
+    assert nums == [1, 2, 3, 4], "The list should be [1, 2, 3, 4] after insertion at the end."
+
+    # Test 3: Inserting in the middle of the list
+    nums = [1, 2, 4]
+    mtb_array.insert_at(nums, 2, 3)
+    assert nums == [1, 2, 3, 4], "The list should be [1, 2, 3, 4] after insertion in the middle."
+
+    # Test 4: Inserting into an empty list
+    nums = []
+    mtb_array.insert_at(nums, 0, 1)
+    assert nums == [1], "The list should be [1] after inserting into an empty list."
+
+    # Test 5: Inserting at an invalid index (too high)
+    nums = [1, 2, 3]
+    with pytest.raises(IndexError):
+        mtb_array.insert_at(nums, 5, 10)
+
+    # Test 6: Inserting at a negative index
+    nums = [1, 2, 3]
+    with pytest.raises(IndexError):
+        mtb_array.insert_at(nums, -1, 0)
 

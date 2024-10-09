@@ -46,3 +46,27 @@ class MTBArray:
             new_arr[i+1] = nums[i]
         nums.clear()
         nums.extend(new_arr)
+
+    def insert_at(self, nums: list[int], index: int, value: int) -> None:
+        """
+        Inserts the value at the given index of the provided list.
+
+        Args:
+            nums (list[int]): The list to modify.
+            index (int): The index at with to put the provided value.
+            value (int): The value to insert.
+
+        Returns:
+            None
+        """
+        n = len(nums)
+        if index < 0 or index > n:
+            raise IndexError("index out of bound")
+        new_arr = [0] * (n+1)
+        for i in range(index):
+            new_arr[i] = nums[i]
+        new_arr[index] = value
+        for i in range(index, n):
+            new_arr[i+1] = nums[i]
+        nums.clear()
+        nums.extend(new_arr)
