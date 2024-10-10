@@ -117,3 +117,69 @@ def test_insert_at():
     with pytest.raises(IndexError):
         mtb_array.insert_at(nums, -1, 0)
 
+
+def test_remove_from_first():
+    obj = MTBArray()
+
+    # Test case 1: Remove element at index 2
+    nums = [1, 2, 3, 4, 5]
+    index = 2
+    obj.remove_from_first(nums, index)
+    expected = [1, 2, 4, 5]
+    assert nums == expected, f"Expected {expected} after removing index {index}, but got {nums}."
+    print(f"Test passed for index {index}: List correctly updated to {nums}.")
+
+    # Test case 2: Index is out of bounds (positive)
+    nums = [1, 2, 3]
+    index = 5
+    with pytest.raises(IndexError):
+        obj.remove_from_first(nums, index)
+    print(f"Test passed for out-of-bounds index {index}: IndexError was raised as expected.")
+
+    # Test case 3: Negative index (assuming negative indices should raise IndexError)
+    nums = [1, 2, 3, 4]
+    index = -1
+    with pytest.raises(IndexError):
+        obj.remove_from_first(nums, index)
+    print(f"Test passed for negative index {index}: IndexError was raised as expected.")
+
+
+def test_remove_at():
+    obj = MTBArray()
+    # Test case 1: Remove element at index 2
+    nums = [1, 2, 3, 4, 5]
+    index = 2
+    obj.remove_at(nums, index)
+    expected = [1, 2, 4, 5]
+    assert nums == expected, f"Expected {expected} after removing element at index {index}, but got {nums}."
+    print(f"Test passed for index {index}: List correctly updated to {nums}.")
+
+    # Test case 2: Index is out of bounds (positive)
+    nums = [1, 2, 3]
+    index = 5
+    with pytest.raises(IndexError):
+        obj.remove_at(nums, index)
+    print(f"Test passed for out-of-bounds index {index}: IndexError was raised as expected.")
+
+    # Test case 3: Negative index (assuming negative indices should raise IndexError)
+    nums = [1, 2, 3, 4]
+    index = -1
+    with pytest.raises(IndexError):
+        obj.remove_at(nums, index)
+    print(f"Test passed for negative index {index}: IndexError was raised as expected.")
+
+    # Test case 4: Remove the first element
+    nums = [10, 20, 30, 40]
+    index = 0
+    obj.remove_at(nums, index)
+    expected = [20, 30, 40]
+    assert nums == expected, f"Expected {expected} after removing element at index {index}, but got {nums}."
+    print(f"Test passed for index {index}: List correctly updated to {nums}.")
+
+    # Test case 5: Remove the last element
+    nums = [10, 20, 30, 40]
+    index = 3
+    obj.remove_at(nums, index)
+    expected = [10, 20, 30]
+    assert nums == expected, f"Expected {expected} after removing element at index {index}, but got {nums}."
+    print(f"Test passed for index {index}: List correctly updated to {nums}.")
